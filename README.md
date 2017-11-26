@@ -1,7 +1,7 @@
 # Calculadora
 
 
-app creada con react-create-app
+app creada con create-react-app
 
 para correr lint: npm run lint
 
