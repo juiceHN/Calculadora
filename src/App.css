@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Press Start 2P Regular'), local('PressStart2P-Regular'), url(https://fonts.gstatic.com/s/pressstart2p/v6/8Lg6LX8-ntOHUQnvQ0E7o08SWvhA5BcWCS8xVZDIH7E.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+.App {
+  text-align: center;
+}
+body{
+  background-color: #D0CCC9;
+}
+button{
+  background-color: white;
+  display: inline-block;
+  width: 15%;
+  height: auto;
+  border-radius: 10px;
+  top:15px;
+  font-size: 80px;
+  border-style: inset;
+  padding: 10px;
+  font-family: 'arial';
+}
+button:hover{
+    background-color:#cccccc;
+    cursor: pointer;
+
+}
+
+.pantalla{
+  width: 60%;
+  height: 125px;
+  font-size: 50px;
+  color: #99ccff;
+  background-color: black;
+  font-family: 'Press Start 2P';
+}
+
+.nan{
+  background-color: #E78601;
+}
+
+.nan:hover{
+  background-color: #cb7701;
+  }
+
+.top{
+  height: 30px;
+}
+h1{
+  font-size: 20px;
+}
