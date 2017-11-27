@@ -8,38 +8,25 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      op: 0,
+      operation: '',
+      metodo: 0,
       display: '',
       num1: '',
       num2: '',
-      operation: '',
     };
   }
 
-  meterValor(numero) {
-    if (this.state.op === 1) {
-      this.setState({
-        display: this.state.num2 + numero,
-        num2: this.state.num2 + numero,
-      });
-    } else {
-      this.setState({
-        display: this.state.display + numero,
-        num1: this.state.num1 + numero,
-      });
-    }
-  }
   operaciones(sim) {
     if (sim === 'AC') {
       this.setState({
         display: '',
-        op: 0,
+        metodo: 0,
         num1: '',
         num2: '',
         operation: '',
       });
     } else if (sim === '←') {
-      if (this.state.op === 1) {
+      if (this.state.metodo === 1) {
         this.setState({
           display: this.state.display.substr(0, this.state.display.length - 1),
           num2: this.state.num2.substr(0, this.state.num2.length - 1),
@@ -53,40 +40,40 @@ class App extends Component {
     } else if (sim === '=') {
       const num1 = parseFloat(this.state.num1, 10);
       const num2 = parseFloat(this.state.num2, 10);
-      let tot;
+      let resultado;
       switch (this.state.operation) {
         default:
 
           break;
         case '+':
-          tot = num1 + num2;
+          resultado = num1 + num2;
           this.setState({
-            display: tot,
-            num1: tot,
+            display: resultado,
+            num1: resultado,
             num2: '',
           });
           break;
         case '/':
-          tot = num1 / num2;
+          resultado = num1 / num2;
           this.setState({
-            display: tot,
-            num1: tot,
+            display: resultado,
+            num1: resultado,
             num2: '',
           });
           break;
         case '-':
-          tot = num1 - num2;
+          resultado = num1 - num2;
           this.setState({
-            display: tot,
-            num1: tot,
+            display: resultado,
+            num1: resultado,
             num2: '',
           });
           break;
         case 'x':
-          tot = num1 * num2;
+          resultado = num1 * num2;
           this.setState({
-            display: tot,
-            num1: tot,
+            display: resultado,
+            num1: resultado,
             num2: '',
           });
           break;
@@ -94,11 +81,26 @@ class App extends Component {
     } else {
       this.setState({
         display: this.state.display + sim,
-        op: 1,
+        metodo: 1,
         operation: sim,
       });
     }
   }
+
+  meterValor(numero) {
+    if (this.state.metodo === 1) {
+      this.setState({
+        display: this.state.num2 + numero,
+        num2: this.state.num2 + numero,
+      });
+    } else {
+      this.setState({
+        display: this.state.display + numero,
+        num1: this.state.num1 + numero,
+      });
+    }
+  }
+
 
   render() {
     return (
